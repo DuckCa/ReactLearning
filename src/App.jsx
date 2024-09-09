@@ -1,38 +1,25 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
 import MyComponent from "./components/learn/MyComponent";
-import SecondComponent from "./components/learn/SecondComponent";
-
+import Input from "./components/learn/Input";
+import Tododata from "./components/learn/TodoData";
+import "./components/todo/todo.css";
+import reactLogo from "./assets/react.svg";
 function App() {
-  const [count, setCount] = useState(0);
-
+  const hoidanit = "Eric";
+  const age = 25;
+  const data = {
+    name: "Duck",
+    gender: 25,
+  };
+  const functionalert = (name) => {
+    alert(`HELLO WORLD ${name} `);
+  };
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Hello World</h1>
+    <div className="todo-Container">
       <MyComponent />
-      <SecondComponent />
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <Input functionalert={functionalert} />
+      <Tododata name={hoidanit} age={age} data={data} />
+      <div className="todo-image"></div>
+    </div>
   );
 }
 
