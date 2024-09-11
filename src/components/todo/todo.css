@@ -1,5 +1,7 @@
 body {
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 .todo-title {
   font-size: 20px;
@@ -29,6 +31,12 @@ body {
 }
 .todo-image {
   text-align: center;
+}
+.todo-data {
+  border: 2px solid black;
+  padding: 10px; /* Khoảng cách bên trong div */
+  width: 200px; /* Chiều rộng của div */
+  height: 100px;
 }
 .logo {
   height: 6em;

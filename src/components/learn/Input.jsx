@@ -1,9 +1,10 @@
+import { useState } from "react";
+
 const Input = (props) => {
-  const { functionalert } = props;
+  const [valueInput, setvalueInput] = useState("eric");
+  const { todoFunction } = props;
   // functionalert("Duck");
-  const eventhandle = (name) => {
-    console.log(name);
-  };
+
   return (
     <>
       <input
@@ -11,12 +12,13 @@ const Input = (props) => {
         type="text"
         placeholder="Enter your task"
         onChange={(event) => {
-          eventhandle(event.target.value);
+          setvalueInput(event.target.value);
         }}
       ></input>
-      <button className="btn-add">ADD</button>
+      <button className="btn-add" onClick={() => todoFunction(valueInput)}>
+        ADD
+      </button>
       <image src=""></image>
-      <div className="todo-data"></div>
     </>
   );
 };
