@@ -4,7 +4,10 @@ const Input = (props) => {
   const [valueInput, setvalueInput] = useState("eric");
   const { todoFunction } = props;
   // functionalert("Duck");
-
+  const handleclick = () => {
+    todoFunction(valueInput);
+    setvalueInput("");
+  };
   return (
     <>
       <input
@@ -14,8 +17,9 @@ const Input = (props) => {
         onChange={(event) => {
           setvalueInput(event.target.value);
         }}
+        value={valueInput}
       ></input>
-      <button className="btn-add" onClick={() => todoFunction(valueInput)}>
+      <button className="btn-add" onClick={() => handleclick()}>
         ADD
       </button>
       <image src=""></image>

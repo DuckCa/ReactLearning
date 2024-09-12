@@ -35,8 +35,10 @@ body {
 .todo-data {
   border: 2px solid black;
   padding: 10px; /* Khoảng cách bên trong div */
-  width: 200px; /* Chiều rộng của div */
-  height: 100px;
+}
+.todo-item {
+  display: flex;
+  justify-content: space-between;
 }
 .logo {
   height: 6em;
