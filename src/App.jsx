@@ -15,12 +15,7 @@ function App() {
       name: "Nam",
     },
   ]);
-  const hoidanit = "Eric";
-  const age = 25;
-  const data = {
-    name: "Duck",
-    gender: 25,
-  };
+
   const todoFunction = (name) => {
     const newtodo = {
       id: randomIntFromInterval(1, 1000000),
@@ -36,7 +31,7 @@ function App() {
     <div className="todo-Container">
       <MyComponent />
       <Input todoFunction={todoFunction} />
-      <Tododata name={hoidanit} age={age} data={data} todoList={todoList} />
+      <Tododata todoList={todoList} />
       <div className="todo-image"></div>
     </div>
   );
