@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const Input = (props) => {
-  const [valueInput, setvalueInput] = useState("eric");
+  const [valueInput, setvalueInput] = useState("");
   const { todoFunction } = props;
   // functionalert("Duck");
   const handleclick = () => {

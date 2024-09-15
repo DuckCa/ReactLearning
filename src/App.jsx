@@ -5,16 +5,7 @@ import Tododata from "./components/learn/TodoData";
 import "./components/todo/todo.css";
 import reactLogo from "./assets/react.svg";
 function App() {
-  const [todoList, settodoList] = useState([
-    {
-      id: 1,
-      name: "DUck",
-    },
-    {
-      id: 2,
-      name: "Nam",
-    },
-  ]);
+  const [todoList, settodoList] = useState([]);
 
   const todoFunction = (name) => {
     const newtodo = {
@@ -31,8 +22,20 @@ function App() {
     <div className="todo-Container">
       <MyComponent />
       <Input todoFunction={todoFunction} />
-      <Tododata todoList={todoList} />
-      <div className="todo-image"></div>
+      {todoList.length > 0 ? (
+        <Tododata todoList={todoList} />
+      ) : (
+        <div className="">
+          <img src="https://static.wixstatic.com/media/8a8033_a738085f564f4d43aa34edebaebae5b5~mv2_d_1600_1600_s_2.jpg/v1/fit/w_1000%2Ch_1000%2Cal_c%2Cq_80/file.jpg" />
+        </div>
+      )}
+
+      {/* {todoList.length > 0 && <Tododata todoList={todoList} />}
+      {todoList.length === 0 && (
+        <div className="">
+          <img src="https://static.wixstatic.com/media/8a8033_a738085f564f4d43aa34edebaebae5b5~mv2_d_1600_1600_s_2.jpg/v1/fit/w_1000%2Ch_1000%2Cal_c%2Cq_80/file.jpg" />
+        </div>
+      )} */}
     </div>
   );
 }
