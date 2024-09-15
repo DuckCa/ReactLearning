@@ -18,12 +18,16 @@ function App() {
     // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
+  const deleteTodo = (id) => {
+    const newtodo = todoList.filter((item) => item.id !== id);
+    settodoList(newtodo);
+  };
   return (
     <div className="todo-Container">
       <MyComponent />
       <Input todoFunction={todoFunction} />
       {todoList.length > 0 ? (
-        <Tododata todoList={todoList} />
+        <Tododata todoList={todoList} deleteTodo={deleteTodo} />
       ) : (
         <div className="">
           <img src="https://static.wixstatic.com/media/8a8033_a738085f564f4d43aa34edebaebae5b5~mv2_d_1600_1600_s_2.jpg/v1/fit/w_1000%2Ch_1000%2Cal_c%2Cq_80/file.jpg" />
